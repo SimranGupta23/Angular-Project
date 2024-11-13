@@ -28,7 +28,7 @@ npm install -g @angular/cli
 
 2. Install Dependencies
    Run the following command to install all required dependencies:
-   - npm install
+   - npm install --force
 3. Run the Application
    To start the development server, run:
    - ng serve
