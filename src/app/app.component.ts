@@ -64,7 +64,6 @@ export class AppComponent {
     }
   }
 
-  // Update bar chart data
   updateBarChart() {
     this.barChartData = this.products.map(product => ({
       name: product.name,
