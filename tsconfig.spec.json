@@ -2,14 +2,13 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/app",
-   "typeRoots": ["node_modules/@types"],
-    "types": ["d3-shape", "d3-scale", "d3-selection"]
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jasmine"
+    ]
   },
-  "files": [
-    "src/main.ts"
-  ],
   "include": [
+    "src/**/*.spec.ts",
     "src/**/*.d.ts"
   ]
 }
