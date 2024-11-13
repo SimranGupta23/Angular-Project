@@ -28,7 +28,6 @@ export class AppComponent {
     this.updateBarChart();
   }
 
-  // Add new product
   addProduct() {
     if (this.productForm.valid) {
       const newProduct = this.productForm.value;
@@ -38,7 +37,6 @@ export class AppComponent {
     }
   }
 
-  // Edit selected product
   editProduct() {
     if (this.selectedProduct && this.productForm.valid) {
       const updatedProduct = this.productForm.value;
@@ -51,7 +49,6 @@ export class AppComponent {
     }
   }
 
-  // Delete selected product
   deleteProduct(product:any) {
     this.selectedProduct = product
     if (this.selectedProduct) {
