@@ -1,0 +1,114 @@
+.container {
+    padding: 40px;
+    background: linear-gradient(135deg, #dcc6e2, #f5f7fa);
+    border-radius: 10px;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #2c3e50;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.chart-section {
+    flex: 1;
+    max-width: 48%;
+    background-color: white;
+}
+
+.form-section {
+    flex: 1;
+    max-width: 48%;
+}
+
+h3 {
+    font-size: 24px;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.product-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    font-size: 14px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-add {
+    background-color: #19b73e;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #222495;
+    color: white;
+}
+.btn-delete {
+    background-color: #8e1d1d;
+    color: white;
+}
+
+.table-section {
+    margin-top: 30px;
+}
+
+.product-table {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-table th {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+}
+
+.product-table td {
+    text-align: center;
+}

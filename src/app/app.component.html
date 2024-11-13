@@ -1,0 +1,63 @@
+<div class="container">
+  <h2 class="title">Product Management</h2>
+
+  <div class="top-section">
+    <div class="chart-section">
+      <ngx-charts-bar-vertical
+        [results]="barChartData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [showDataLabel]="true"
+        [gradient]="false">
+      </ngx-charts-bar-vertical>
+    </div>
+
+    <div class="form-section">
+      <h3 *ngIf="!selectedProduct">Add New Product</h3>
+      <h3 *ngIf="selectedProduct">Edit Product</h3>
+      <form [formGroup]="productForm" (ngSubmit)="addProduct()" class="product-form">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input id="name" pInputText formControlName="name" placeholder="Enter product name" />
+        </div>
+        <div class="form-field">
+          <label for="price">Price</label>
+          <input id="price" pInputText type="number" formControlName="price" placeholder="Enter product price" />
+        </div>
+        <div class="form-field">
+          <label for="category">Category</label>
+          <input id="category" pInputText formControlName="category" placeholder="Enter product category" />
+        </div>
+        <div class="form-actions">
+          <button pButton type="submit" label="Add Product" [disabled]="productForm.invalid" class="btn-add"></button>
+          <button pButton type="button" label="Edit Product" (click)="editProduct()" *ngIf="selectedProduct" [disabled]="productForm.invalid" class="btn-edit"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="table-section">
+    <p-table [value]="products" [(selection)]="selectedProduct" (onRowSelect)="onSelectProduct($event)" class="product-table">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="text-align: center;">Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.category }}</td>
+          <td>
+            <button pButton icon="pi pi-pencil" class="btn-edit" (click)="onSelectProduct(product)" label="Edit"></button>&nbsp;&nbsp;
+            <button pButton icon="pi pi-trash" class="btn-delete" (click)="deleteProduct()" label="Delete"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
