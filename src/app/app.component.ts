@@ -52,7 +52,8 @@ export class AppComponent {
   }
 
   // Delete selected product
-  deleteProduct() {
+  deleteProduct(product:any) {
+    this.selectedProduct = product
     if (this.selectedProduct) {
       const index = this.products.findIndex(product => product === this.selectedProduct);
       if (index > -1) {
@@ -69,6 +70,7 @@ export class AppComponent {
       name: product.name,
       value: product.price
     }));
+    this.selectedProduct = null
   }
 
   // Select a product from the table for editing

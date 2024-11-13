@@ -30,7 +30,7 @@
           <input id="category" pInputText formControlName="category" placeholder="Enter product category" />
         </div>
         <div class="form-actions">
-          <button pButton type="submit" label="Add Product" [disabled]="productForm.invalid" class="btn-add"></button>
+          <button pButton type="submit" label="Add Product" [disabled]="productForm.invalid" *ngIf="!selectedProduct" class="btn-add"></button>
           <button pButton type="button" label="Edit Product" (click)="editProduct()" *ngIf="selectedProduct" [disabled]="productForm.invalid" class="btn-edit"></button>
         </div>
       </form>
@@ -54,7 +54,7 @@
           <td>{{ product.category }}</td>
           <td>
             <button pButton icon="pi pi-pencil" class="btn-edit" (click)="onSelectProduct(product)" label="Edit"></button>&nbsp;&nbsp;
-            <button pButton icon="pi pi-trash" class="btn-delete" (click)="deleteProduct()" label="Delete"></button>
+            <button pButton icon="pi pi-trash" class="btn-delete" (click)="deleteProduct(product)" label="Delete"></button>
           </td>
         </tr>
       </ng-template>
